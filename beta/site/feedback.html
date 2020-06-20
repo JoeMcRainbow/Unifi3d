@@ -9,7 +9,7 @@
     <meta name="author" content="u/yourlocaltechboi">
 
     <!-- Website Title -->
-    <title>Unifi3d</title>
+    <title>Unifi3d - Site Feedback</title>
     
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
@@ -73,12 +73,55 @@
     <div class="ex-basic-2">
         <div class="container">
             <div class="row">
-                <div class="col-lg-10 offset-lg-1">
-                    <div class="text-container">
-                        
+                <div class="col-mg-12">
+                    <div class="row">
+                        <div class="column1">
+                            <h3 id="feedbackListHeader">Feedback Info:</h3>
+                            <ul id="feedbackList">
+                                <li>
+                                    Feedback Types:
+                                    <ul>
+                                        <li>Bug: for when there's something wrong (Typo, broken link, warped image, etc)</li>
+                                        <li>Feature Request: For when there's a cool idea you had for the website</li>
+                                        <li>Content Addition Request: For when there's an addition to an existing page or section that you believe would be beneficial to the community (Writeups, tutorials, etc.)</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Feedback Content:
+                                    <ul>
+                                        <li>
+                                            For Bugs:
+                                            <ul>
+                                                <li>Give a link to the page</li>
+                                                <li>Give a short description of what's wrong</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            For Feature Requests:
+                                            <ul>
+                                                <li>Drop your reddit and/or Twitter username(s) (for credit) (Optional)</li>
+                                                <li>Give a short description of the feature you want to see added!</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            For Content Addition Requests:
+                                            <ul>
+                                                <li>Give the name of the content author</li>
+                                                <li>Drop a link to the proposed content</li>
+                                                <li>Give a short statement why the content is important, and should be added</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <p id="feedbackListDisclaimer"><i>Disclaimer: I reserve the right not to incorporate any and all suggestions made via this form, and give no guarantee that any requested features/content will be added in a timely manner, if at all.</i></p>
+                        </div>
+                        <div class="column2">
+                            <div id="form" include="../includes/feedback-form.html"></div>
+                        </div>
                     </div>
                 </div>
-            </div> <!-- end of row -->
+            </div>
         </div> <!-- end of container -->
     </div> <!-- end of ex-basic -->
     <!-- end of terms content -->
@@ -101,5 +144,21 @@
     <script>
         includeHTML();
     </script>
+    <script>
+        var $form = $('div#form'),
+        url = 'https://script.google.com/macros/s/AKfycbzmnK6PTQO8TPIYCe-OfpBbl85K3M4a010sBTb8WXKvaK4CH2RC/exec'
+  
+        $('#submit-form').on('click', function(e) {
+          e.preventDefault();
+          var jqxhr = $.ajax({
+            url: url,
+            method: "GET",
+            dataType: "json",
+            data: $form.serializeObject()
+          }).success(
+            // do something
+          );
+        })
+      </script>
 </body>
 </html>
