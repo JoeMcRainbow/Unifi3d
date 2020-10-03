@@ -1,0 +1,1 @@
+By submitting a pull request to this repository you acknowledge that any and all content in the PR is genuine and contributes to the progress of the Unifi3d website. Pull requests made for hacktoberfest MUST FOLLOW THESE GUIDELINES OR I WILL FLAG THEM AS INELIGIBLE!!!
